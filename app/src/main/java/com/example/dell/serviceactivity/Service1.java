@@ -1,5 +1,6 @@
 package com.example.dell.serviceactivity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,12 +30,18 @@ public class Service1 extends AppCompatActivity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.btn_Start_Service:
                 Log.e(Service1.TAG,"btn_Start_Service");
+
+                Intent intent=new Intent(this,CustomStartedService.class);
+                startService(intent);
                 return;
             case R.id.btn_Start_Bound_Service:
                 Log.v(Service1.TAG,"btn_Start_Bound_Service");
                 return;
             case R.id.btn_Start_Intent_Service:
                 Log.d(Service1.TAG,"btn_Start_Intent_Service");
+                Intent intentInt=new Intent(this, ServiceIntent.class );
+                startService(intentInt);
+
                 return;
         }
 
